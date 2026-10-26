@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımızda | SM Bostancıoğlu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: #131b2e;
+      --gold: #c5a880;
+      --gold-hover: #dfc299;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(197, 168, 128, 0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.7; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+
+    header {
+      position: sticky; top: 0; background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color);
+      z-index: 1000; padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { text-decoration: none; display: flex; flex-direction: column; }
+    .logo-main { font-size: 1.35rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; }
+    .logo-sub { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 3px; }
+    .nav-links a { color: var(--text-white); text-decoration: none; margin-left: 1.8rem; font-size: 0.9rem; transition: color 0.3s; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .btn-nav { background: linear-gradient(135deg, #10b981, #059669); color: white !important; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; }
+
+    .page-hero {
+      background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 5rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border-color);
+    }
+    .page-hero h1 { font-size: 2.8rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 4.5rem 1.5rem; }
+    .about-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem; margin-bottom: 3rem; }
+    .about-card h2 { color: var(--gold); font-size: 2rem; margin-bottom: 1.5rem; }
+    .about-card p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.8; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .value-box { background: rgba(11, 15, 25, 0.6); border: 1px solid var(--border-color); border-radius: 10px; padding: 2rem; }
+    .value-box h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 0.8rem; }
+    .value-box p { color: var(--text-muted); font-size: 0.95rem; }
+
+    .floating-wp {
+      position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white;
+      width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center;
+      align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 9999; text-decoration: none;
+    }
+
+    footer { background: #080c14; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 3rem 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-links { margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 1rem; }
+    .footer-links a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-main brand-font">SM BOSTANCIOĞLU</span>
+      <span class="logo-sub">İNŞAAT & GAYRİMENKUL</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="active">Hakkımızda</a>
+      <a href="projeler.html">Projelerimiz</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="https://enkiralama.com.tr" target="_blank" class="btn-nav"><i class="fa-solid fa-key"></i> Kiralık Portföy</a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1 class="brand-font">Hakkımızda</h1>
+    <p>2005 yılından bu yana güven, mühendislik ve kalitenin simgesi</p>
+  </section>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="about-card">
+      <h2 class="brand-font">Biz Kimiz?</h2>
+      <p>
+        Temelleri 2005 yılında atılan firmamız, güçlü ve köklü bir geçmişe sahip bir inşaat ve gayrimenkul markasıdır. Sektördeki uzun yıllara dayanan tecrübe, birikim ve güveni tek çatı altında birleştirerek, Türkiye'nin çeşitli bölgelerinde başarılı projelere imza atmaktayız.
+      </p>
+      <p>
+        Kuruluşumuzdan bu yana kaliteli, güvenilir ve estetik yaşam alanları üretmeyi ilke edindik; modern mühendislik çözümleriyle mimariyi buluşturarak hem konut hem de ticari yapılarda fark yaratmayı amaçlıyoruz.
+      </p>
+      <p>
+        Bugün itibarıyla Muğla'nın eşsiz güzellikteki ilçesi Fethiye'de, Ankara'da ve İzmir'in gözde sahil kasabası Yenifoça'da devam eden projelerimizle, yalnızca yapılar değil; yaşanabilir, huzurlu ve çağdaş yaşam alanları inşa ediyoruz. İnşa ettiğimiz her yapıda yalnızca beton ve demir değil, aynı zamanda güven, kalite ve hayallerin temellerini atıyoruz.
+      </p>
+
+      <div class="values-grid">
+        <div class="value-box">
+          <i class="fa-solid fa-bullseye" style="color:var(--gold); font-size:1.8rem; margin-bottom:0.8rem;"></i>
+          <h3 class="brand-font">Misyonumuz</h3>
+          <p>Güvenilir, kaliteli ve yenilikçi çözümler sunarak müşterilerimize ve iş ortaklarımıza en iyi hizmeti sağlamak; çevreye duyarlı, sürdürülebilir yaşam alanları üretmek.</p>
+        </div>
+        <div class="value-box">
+          <i class="fa-solid fa-eye" style="color:var(--gold); font-size:1.8rem; margin-bottom:0.8rem;"></i>
+          <h3 class="brand-font">Vizyonumuz</h3>
+          <p>Sektöründe öncü ve yenilikçi bir marka olarak, geleceğin şehirlerini ve modern mimarisini bugünden şekillendiren kalıcı değerler üretmek.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Butonu -->
+  <a href="https://wa.me/905065590606?text=Merhaba,%20SM%20Bostancıoğlu%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="floating-wp" title="WhatsApp ile İletişime Geç">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="projeler.html">Projelerimiz</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="https://enkiralama.com.tr" target="_blank">En Kiralama</a>
+    </div>
+    <p class="brand-font" style="color:var(--gold); font-size:1.1rem; margin-bottom:0.5rem;">SM BOSTANCIOĞLU İNŞAAT & GAYRİMENKUL</p>
+    <p>Tel: +90 506 559 06 06 | E-Posta: smbostancioglu@gmail.com</p>
+    <p style="margin-top:0.5rem;">Fethiye / Muğla | Tüm Hakları Saklıdır &copy; 2026</p>
+  </footer>
+
+</body>
+</html>

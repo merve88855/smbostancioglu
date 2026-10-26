@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim & Ofis | SM Bostancıoğlu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: #131b2e;
+      --gold: #c5a880;
+      --gold-hover: #dfc299;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(197, 168, 128, 0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+
+    header {
+      position: sticky; top: 0; background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color);
+      z-index: 1000; padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { text-decoration: none; display: flex; flex-direction: column; }
+    .logo-main { font-size: 1.35rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; }
+    .logo-sub { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 3px; }
+    .nav-links a { color: var(--text-white); text-decoration: none; margin-left: 1.8rem; font-size: 0.9rem; transition: color 0.3s; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .btn-nav { background: linear-gradient(135deg, #10b981, #059669); color: white !important; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; }
+
+    .page-hero {
+      background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 5rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border-color);
+    }
+    .page-hero h1 { font-size: 2.8rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 4.5rem 1.5rem; }
+    .contact-wrapper {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 3rem;
+    }
+    .contact-info h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 1.2rem; }
+    .contact-info p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1rem; }
+    
+    .contact-item { display: flex; align-items: flex-start; gap: 1.2rem; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.05rem; }
+    .contact-item i { color: var(--gold); font-size: 1.4rem; margin-top: 0.2rem; }
+    .contact-item strong { color: var(--text-white); display: block; margin-bottom: 0.2rem; }
+    
+    .map-box { width: 100%; height: 420px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
+    .map-box iframe { width: 100%; height: 100%; border: 0; }
+
+    .floating-wp {
+      position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white;
+      width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center;
+      align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 9999; text-decoration: none;
+    }
+
+    footer { background: #080c14; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 3rem 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-links { margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 1rem; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 850px) {
+      .contact-wrapper { grid-template-columns: 1fr; padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-main brand-font">SM BOSTANCIOĞLU</span>
+      <span class="logo-sub">İNŞAAT & GAYRİMENKUL</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="projeler.html">Projelerimiz</a>
+      <a href="iletisim.html" class="active">İletişim</a>
+      <a href="https://enkiralama.com.tr" target="_blank" class="btn-nav"><i class="fa-solid fa-key"></i> Kiralık Portföy</a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1 class="brand-font">İletişim & Ofisimiz</h1>
+    <p>Projelerimizi yerinde görmek ve bir kahvemizi içmek için ofisimize bekleriz</p>
+  </section>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3 class="brand-font">Merkez Ofisimiz</h3>
+        <p>Yatırım fırsatları, devam eden projelerimiz ve portföyümüzle ilgili detaylı bilgi almak için dilediğiniz zaman bizimle iletişime geçebilirsiniz.</p>
+        
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Adres:</strong>
+            <span>SM Bostancıoğlu İnşaat, Fethiye / Muğla</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Telefon:</strong>
+            <a href="tel:+905065590606" style="color:var(--text-muted); text-decoration:none;">+90 506 559 06 06</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>E-Posta:</strong>
+            <a href="mailto:smbostancioglu@gmail.com" style="color:var(--text-muted); text-decoration:none;">smbostancioglu@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <strong>Çalışma Saatleri:</strong>
+            <span>Pazartesi - Cumartesi: 09:00 - 18:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nokta Atışı Fethiye Ofis Haritası -->
+      <div class="map-box">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.3303498146274!2d29.139208071319594!3d36.61843411300681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c045a003fa2b45%3A0x974aa44867af1594!2zU00gQk9TVEFOQ0lPxJ5MVSDEsE7FnkFBVA!5e0!3m2!1str!2str!4v1792998221209!5m2!1str!2str" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Butonu -->
+  <a href="https://wa.me/905065590606?text=Merhaba,%20SM%20Bostancıoğlu%20projeleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="floating-wp" title="WhatsApp ile İletişime Geç">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="projeler.html">Projelerimiz</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="https://enkiralama.com.tr" target="_blank">En Kiralama</a>
+    </div>
+    <p class="brand-font" style="color:var(--gold); font-size:1.1rem; margin-bottom:0.5rem;">SM BOSTANCIOĞLU İNŞAAT & GAYRİMENKUL</p>
+    <p>Tel: +90 506 559 06 06 | E-Posta: smbostancioglu@gmail.com</p>
+    <p style="margin-top:0.5rem;">Fethiye / Muğla | Tüm Hakları Saklıdır &copy; 2026</p>
+  </footer>
+
+</body>
+</html>

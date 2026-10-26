@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projelerimiz | SM Bostancıoğlu İnşaat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: #131b2e;
+      --gold: #c5a880;
+      --gold-hover: #dfc299;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(197, 168, 128, 0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; }
+    h1, h2, h3, h4, .brand-font { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+
+    header {
+      position: sticky; top: 0; background: rgba(11, 15, 25, 0.96);
+      backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color);
+      z-index: 1000; padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { text-decoration: none; display: flex; flex-direction: column; }
+    .logo-main { font-size: 1.35rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; }
+    .logo-sub { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 3px; }
+    
+    .nav-links { display: flex; align-items: center; }
+    .nav-links a { color: var(--text-white); text-decoration: none; margin-left: 1.8rem; font-size: 0.9rem; transition: color 0.3s; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .btn-nav { background: linear-gradient(135deg, #10b981, #059669); color: white !important; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; }
+
+    .page-hero {
+      background: linear-gradient(rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.98)), url('resimler/ankara_villa1.jpg') center/cover no-repeat;
+      padding: 4.5rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border-color);
+    }
+    .page-hero h1 { font-size: 2.6rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--text-muted); font-size: 1rem; }
+
+    .fizan-container {
+      max-width: 1240px; margin: 0 auto; padding: 3.5rem 1.5rem;
+      display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start;
+    }
+
+    .project-content h2 {
+      font-size: 2.2rem; color: var(--text-white); margin-bottom: 1.5rem; text-transform: uppercase;
+      border-bottom: 2px solid var(--gold); padding-bottom: 0.8rem; display: inline-block;
+    }
+    .project-text { color: #cbd5e1; font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .project-text p { margin-bottom: 1rem; }
+    
+    .project-address-box {
+      background: rgba(197, 168, 128, 0.08); border-left: 4px solid var(--gold);
+      padding: 1rem 1.2rem; border-radius: 4px; margin-bottom: 2rem; color: var(--gold); font-size: 0.95rem;
+    }
+
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem;
+    }
+    .gallery-item {
+      border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color);
+      background: #000; height: 320px;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .sidebar-box {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: 10px; overflow: hidden; position: sticky; top: 100px;
+    }
+    .sidebar-header {
+      background: rgba(197, 168, 128, 0.12); padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border-color);
+    }
+    .sidebar-header span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); display: block; }
+    .sidebar-header h3 { font-size: 1.3rem; color: var(--text-white); margin-top: 0.2rem; }
+
+    .sidebar-menu { list-style: none; }
+    .sidebar-item {
+      padding: 1rem 1.3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      transition: all 0.25s ease; font-size: 0.9rem; color: #cbd5e1; font-weight: 500;
+    }
+    .sidebar-item i.icon-building { color: var(--gold); margin-right: 0.7rem; font-size: 1rem; }
+    .sidebar-item:hover, .sidebar-item.active {
+      background: rgba(197, 168, 128, 0.15); color: var(--gold); font-weight: 700; padding-left: 1.6rem;
+    }
+    .sidebar-item.active { border-left: 4px solid var(--gold); }
+
+    .floating-wp {
+      position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white;
+      width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center;
+      align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 9999; text-decoration: none;
+    }
+
+    footer { background: #080c14; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 3rem 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-links { margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 1rem; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .fizan-container { grid-template-columns: 1fr; }
+      .sidebar-box { position: static; margin-bottom: 2.5rem; order: -1; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-main brand-font">SM BOSTANCIOĞLU</span>
+      <span class="logo-sub">İNŞAAT & GAYRİMENKUL</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="projeler.html" class="active">Projelerimiz</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="https://enkiralama.com.tr" target="_blank" class="btn-nav"><i class="fa-solid fa-key"></i> Kiralık Portföy</a>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1 class="brand-font">Projelerimiz</h1>
+    <p>Muğla, Ankara ve İzmir bölgelerinde hayata geçirdiğimiz seçkin yapılarımız</p>
+  </section>
+
+  <!-- İki Bölümlü Proje Sayfası -->
+  <div class="fizan-container">
+    
+    <!-- Sol: Seçilen Projenin Bilgisi ve Görselleri -->
+    <div class="project-content">
+      <h2 id="proj-title" class="brand-font">Muğla Villa ve Konut Projeleri</h2>
+      
+      <div id="proj-desc" class="project-text">
+        <p>SM Bostancıoğlu olarak, Türkiye'nin en gözde lokasyonlarından biri olan Muğla'da hayata geçirdiğimiz villa ve konut projeleriyle, doğayla iç içe, konforlu ve estetik yaşam alanları sunuyoruz. Ege'nin eşsiz doğasına sahip Fethiye başta olmak üzere, Muğla'nın çeşitli bölgelerinde konumlanan projelerimiz; modern mimari anlayışı, yüksek inşaat kalitesi ve çevreye duyarlı tasarımıyla fark yaratıyor.</p>
+        <p>Gerek yazlık olarak kullanılabilecek özel villalar, gerekse dört mevsim yaşamaya uygun konut çözümleriyle farklı ihtiyaçlara hitap eden projelerimizde geniş yaşam alanları, ferah bahçeler ve fonksiyonel iç planlamalar ön planda tutulmuştur. Tatil havasını her gün yaşatacak bu özel konutlar, hem yaşam hem de yatırım açısından yüksek potansiyele sahiptir.</p>
+      </div>
+
+      <div id="proj-addr" class="project-address-box" style="display:none;"></div>
+
+      <h4 class="brand-font" style="color:var(--gold); margin-top: 2rem; margin-bottom: 1rem; font-size:1.1rem; letter-spacing:1px;">PROJE GÖRSELLERİ</h4>
+      <div id="proj-gallery" class="gallery-grid">
+        <div class="gallery-item"><img src="resimler/mugla1.jpg" onerror="this.src='https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=80'" alt="Muğla Villa Projesi"></div>
+        <div class="gallery-item"><img src="resimler/mugla2.jpg" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80'" alt="Muğla Villa Projesi"></div>
+        <div class="gallery-item"><img src="resimler/mugla3.jpg" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80'" alt="Muğla Villa Projesi"></div>
+        <div class="gallery-item"><img src="resimler/mugla4.jpg" onerror="this.src='https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80'" alt="Muğla Villa Projesi"></div>
+      </div>
+    </div>
+
+    <!-- Sağ: Kurumsal Proje Menüsü -->
+    <div class="sidebar-box">
+      <div class="sidebar-header">
+        <span>SM Bostancıoğlu</span>
+        <h3 class="brand-font">PROJELER</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active" onclick="loadProject('mugla')">
+          <span><i class="fa-solid fa-city icon-building"></i> MUĞLA VİLLA VE KONUT PROJELERİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('bati')">
+          <span><i class="fa-solid fa-city icon-building"></i> BATI YERLEŞİM PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('uyar')">
+          <span><i class="fa-solid fa-city icon-building"></i> UYAR İŞ MERKEZİ PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('butik')">
+          <span><i class="fa-solid fa-city icon-building"></i> BUTİKKULE PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('ankara_villa')">
+          <span><i class="fa-solid fa-city icon-building"></i> ANKARA VİLLA PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('uyarkent_batikent')">
+          <span><i class="fa-solid fa-city icon-building"></i> UYARKENT SİTESİ BATIKENT PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('uyarkent_torekent')">
+          <span><i class="fa-solid fa-city icon-building"></i> UYARKENT SİTESİ TÖREKENT PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('izmir_villa')">
+          <span><i class="fa-solid fa-city icon-building"></i> İZMİR VİLLA VE KONUT PROJESİ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+        <li class="sidebar-item" onclick="loadProject('izmir_element')">
+          <span><i class="fa-solid fa-city icon-building"></i> İZMİR ELEMENT EGE ŞANTİYE</span>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- WhatsApp Butonu -->
+  <a href="https://wa.me/905065590606?text=Merhaba,%20SM%20Bostancıoğlu%20projeleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="floating-wp" title="WhatsApp ile İletişime Geç">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="projeler.html">Projelerimiz</a>
+      <a href="iletisim.html">İletişim</a>
+      <a href="https://enkiralama.com.tr" target="_blank">En Kiralama</a>
+    </div>
+    <p class="brand-font" style="color:var(--gold); font-size:1.1rem; margin-bottom:0.5rem;">SM BOSTANCIOĞLU İNŞAAT & GAYRİMENKUL</p>
+    <p>Tel: +90 506 559 06 06 | E-Posta: smbostancioglu@gmail.com</p>
+    <p style="margin-top:0.5rem;">Fethiye / Muğla | Tüm Hakları Saklıdır &copy; 2026</p>
+  </footer>
+
+  <!-- Veri Motoru (Resimler klasöründeki yerel dosyalara bağlıdır) -->
+  <script>
+    const projectsData = {
+      mugla: {
+        title: "Muğla Villa ve Konut Projeleri",
+        desc: "<p>SM Bostancıoğlu olarak, Türkiye'nin en gözde lokasyonlarından biri olan Muğla'da hayata geçirdiğimiz villa ve konut projeleriyle, doğayla iç içe, konforlu ve estetik yaşam alanları sunuyoruz. Ege'nin eşsiz doğasına sahip Fethiye başta olmak üzere, Muğla'nın çeşitli bölgelerinde konumlanan projelerimiz; modern mimari anlayışı, yüksek inşaat kalitesi ve çevreye duyarlı tasarımıyla fark yaratıyor.</p><p>Gerek yazlık olarak kullanılabilecek özel villalar, gerekse dört mevsim yaşamaya uygun konut çözümleriyle farklı ihtiyaçlara hitap eden projelerimizde geniş yaşam alanları, ferah bahçeler ve fonksiyonel iç planlamalar ön planda tutulmuştur.</p>",
+        address: "",
+        images: ["resimler/mugla1.jpg", "resimler/mugla2.jpg", "resimler/mugla3.jpg", "resimler/mugla4.jpg"]
+      },
+      bati: {
+        title: "Batı Yerleşim Sitesi",
+        desc: "<p>Batı Yerleşim Sitesi, Ankara'nın Yenimahalle ilçesine bağlı Turgut Özal Mahallesi'nde yer alan bir konut kompleksidir. Ankara'nın gözde yerleşim alanlarından Batıkent'te, modern şehircilik anlayışıyla inşa edilmiş prestijli bir konut projesidir.</p><p>Sosyal yaşam alanlarına, park ve yeşil alanlara, çocuk oyun alanlarına ve açık otoparka sahip olan site, aile yaşamı için konforlu ve güvenli bir ortam sunar. Sağlam yapısı ve estetik mimarisiyle Ankara'nın örnek konut projeleri arasında yer almaktadır.</p>",
+        address: "Batı Yerleşim Sitesi Batıkent mah. Yenimahalle / Ankara",
+        images: ["resimler/bati1.jpg", "resimler/bati2.jpg"]
+      },
+      uyar: {
+        title: "Uyar İş Merkezi Projesi",
+        desc: "<p>Uyar İş Merkezi, Ankara'nın Sincan ilçesindeki Pınarbaşı Mahallesi'nde, Vatan Caddesi üzerinde konumlanmış modern bir ticaret merkezidir. Bu iş merkezi, çeşitli sektörlerden firmalara ev sahipliği yaparak bölgenin ticari faaliyetlerine önemli katkılarda bulunmaktadır.</p><p>Geniş ofis alanları, modern altyapısı ve stratejik konumuyla işletmeler için ideal bir çalışma ortamı sağlamaktadır.</p>",
+        address: "Uyar İş Merkezi – Vatan Caddesi Sincan / Ankara",
+        images: ["resimler/uyar1.jpg", "resimler/uyar2.jpg"]
+      },
+      butik: {
+        title: "Butikkule Projesi",
+        desc: "<p>Butik Kule Rezidans, Ankara'nın Etimesgut ilçesinin Topçu Mahallesi'nde konumlanmış modern bir konut projesidir. Proje, çağdaş mimarisi ve sunduğu olanaklarla bölgedeki yaşam standartlarını yükseltmeyi hedeflemektedir.</p><p>Daireler ferah iç mekânları ve kaliteli malzeme kullanımıyla konforlu bir yaşam alanı sağlamaktadır. Ayrıca güvenlik hizmetleri, otopark ve sosyal alanlar yer almaktadır.</p>",
+        address: "Butikkule – Topçu mah. Etimesgut / Ankara",
+        images: ["resimler/butik1.jpg", "resimler/butik2.jpg"]
+      },
+      ankara_villa: {
+        title: "Ankara Villa Projesi",
+        desc: "<p>Ankara'daki villa projelerimiz, şehir yaşamının merkezinde ama kalabalıktan uzak, konforlu ve prestijli bir yaşam sunuyor.</p><p>Modern mimariyle tasarlanan bu özel yapılar, geniş bahçeleri, ferah iç alanları ve yüksek yapı kalitesiyle dikkat çekiyor. Doğayla iç içe sakin bir yaşam alanı arayanlar için ideal çözümler sunar.</p>",
+        address: "Çayyolu / Ankara",
+        images: ["resimler/ankara_villa1.jpg", "resimler/ankara_villa2.jpg"]
+      },
+      uyarkent_batikent: {
+        title: "Uyarkent Sitesi Batıkent Projesi",
+        desc: "<p>Uyarkent Sitesi, Ankara'nın Yenimahalle ilçesine bağlı Batıkent Mahallesi'nde konumlanmış prestijli bir konut kompleksidir. Osb Metro İstasyonu'na birkaç dakikalık yürüme mesafesinde bulunması, sakinlerine hızlı ve kolay ulaşım imkânı sunar.</p><p>Peyzajlı yeşil alanları, çocuk oyun parkları ve yürüyüş yollarıyla huzurlu ve güvenli bir yaşam alanı oluşturur.</p>",
+        address: "Uyarkent Sitesi Batıkent mah. Yenimahalle / Ankara",
+        images: ["resimler/uyarkent_batikent1.jpg", "resimler/uyarkent_batikent2.jpg"]
+      },
+      uyarkent_torekent: {
+        title: "Uyarkent Sitesi Törekent Projesi",
+        desc: "<p>Sincan'ın gelişen aksında sağlam mühendislik çözümleri ve estetik mimariyle hayata geçirilmiş; aile odaklı modern bir konut kompleksi projesidir.</p>",
+        address: "Törekent / Sincan / Ankara",
+        images: ["resimler/uyarkent_torekent1.jpg", "resimler/uyarkent_torekent2.jpg"]
+      },
+      izmir_villa: {
+        title: "İzmir Villa ve Konut Projesi",
+        desc: "<p>İzmir'in eşsiz doğasında yepyeni bir yaşam alanı. Denize yakın konumu, yemyeşil doğası ve modern mimarisiyle öne çıkan bu proje, sakin ve konforlu bir hayat arayanlara özel olarak tasarlandı.</p><p>Az katlı modern villalar, geniş terasları ve ferah iç mekanlarıyla kesintisiz doğa ve gün ışığı avantajına sahiptir.</p>",
+        address: "Yenifoça / İzmir",
+        images: ["resimler/izmir_villa1.jpg", "resimler/izmir_villa2.jpg"]
+      },
+      izmir_element: {
+        title: "İzmir Element Ege Şantiye",
+        desc: "<p>İzmir'in eşsiz deniz manzarasına hakim bu özel lokasyonda yükselen Element Ege Projesi. Zemin kotundan itibaren titizlikle planlanmış teraslı yapılarla deniz manzarasını her konuta ulaştırmayı hedefliyor.</p><p>Yamaç üzerine konumlanan villalar doğal eğimi avantaja çevirirken çevre ve zemin güçlendirme standartlarında öncüdür.</p>",
+        address: "Foça / İzmir",
+        images: ["resimler/izmir_element1.jpg", "resimler/izmir_element2.jpg"]
+      }
+    };
+
+    function loadProject(key) {
+      const data = projectsData[key];
+      if (!data) return;
+
+      document.getElementById('proj-title').innerText = data.title;
+      document.getElementById('proj-desc').innerHTML = data.desc;
+
+      const addrBox = document.getElementById('proj-addr');
+      if (data.address && data.address.trim() !== "") {
+        addrBox.innerHTML = '<i class="fa-solid fa-location-dot"></i> <strong>Adres:</strong> ' + data.address;
+        addrBox.style.display = 'block';
+      } else {
+        addrBox.style.display = 'none';
+      }
+
+      const galleryBox = document.getElementById('proj-gallery');
+      galleryBox.innerHTML = "";
+      data.images.forEach(imgUrl => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.innerHTML = `<img src="${imgUrl}" alt="${data.title}">`;
+        galleryBox.appendChild(item);
+      });
+
+      const items = document.querySelectorAll('.sidebar-item');
+      items.forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      window.scrollTo({ top: 350, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
