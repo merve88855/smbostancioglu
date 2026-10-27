@@ -82,6 +82,46 @@
     @media (max-width: 850px) {
       .contact-wrapper { grid-template-columns: 1fr; padding: 1.8rem; }
     }
+    .mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+@media (max-width: 850px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 15, 25, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        text-align: center;
+        gap: 1.2rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 1rem;
+        display: inline-block;
+    }
+}
   </style>
 </head>
 <body>
@@ -99,6 +139,9 @@
       <a href="iletisim.html" class="active">İletişim</a>
       <a href="https://enkiralama.com.tr" target="_blank" class="btn-nav"><i class="fa-solid fa-key"></i> Kiralık Portföy</a>
     </div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menü">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
   <!-- Page Hero -->
@@ -180,6 +223,13 @@
     <p>Tel: +90 506 559 06 06 | E-Posta: smbostancioglu@gmail.com</p>
     <p style="margin-top:0.5rem;">Fethiye / Muğla | Tüm Hakları Saklıdır &copy; 2026</p>
   </footer>
+  <script>
+  const toggleBtn = document.getElementById('menuToggle');
+  const navMenu = document.querySelector('.nav-links');
 
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
