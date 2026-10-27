@@ -241,11 +241,12 @@
     <div style="max-width: 420px; margin: 0 auto 2.5rem auto; padding: 1.5rem; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
         <h3 style="color: var(--gold); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">SİZİ ARAYALIM</h3>
         <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.2rem;">Bilgilerinizi bırakın, en kısa sürede size dönüş yapalım.</p>
-        <form action="https://formspree.io/f/mqppqqgk" method="POST" style="display: flex; flex-direction: column; gap: 0.8rem;">
-            <input type="text" name="name" placeholder="Adınız Soyadınız" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); background: #0c1222; color: #fff; font-size: 0.9rem; box-sizing: border-box; outline: none;">
-            <input type="tel" name="phone" placeholder="Telefon Numaranız" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); background: #0c1222; color: #fff; font-size: 0.9rem; box-sizing: border-box; outline: none;">
-            <button type="submit" style="width: 100%; padding: 0.8rem; background: var(--gold); color: #0b1120; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">GÖNDER</button>
-        </form>
+       <form id="callBackForm" action="https://formspree.io/f/mqppqqgk" method="POST" style="display: flex; flex-direction: column; gap: 0.8rem;">
+    <input type="text" name="name" placeholder="Adınız Soyadınız" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.2); color: white;">
+    <input type="tel" name="phone" placeholder="Telefon Numaranız" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0, 0, 0, 0.2); color: white;">
+    <button type="submit" id="formSubmitBtn" style="width: 100%; padding: 0.8rem; background: var(--gold); color: #0b1120; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">GÖNDER</button>
+    <p id="formStatus" style="display: none; text-align: center; font-size: 0.85rem; margin-top: 0.5rem;"></p>
+</form>
     </div>
     <p class="brand-font" style="color:var(--gold); font-size:1.1rem; margin-bottom:0.5rem; text-align:center;">SM BOSTANCIOĞLU İNŞAAT & GAYRİMENKUL</p>
     <p style="display:flex; flex-direction:column; gap:0.3rem; align-items:center;">
@@ -256,14 +257,56 @@
 </footer>
 
 <script>
-const toggleBtn = document.getElementById('menuToggle');
-const navMenu = document.querySelector('.nav-links');
+    const toggleBtn = document.getElementById('menuToggle');
+    const navMenu = document.querySelector('.nav-links');
 
-if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-}
+    if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    const callBackForm = document.getElementById('callBackForm');
+    const formStatus = document.getElementById('formStatus');
+    const formSubmitBtn = document.getElementById('formSubmitBtn');
+
+    if (callBackForm) {
+        callBackForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            formSubmitBtn.disabled = true;
+            formSubmitBtn.innerText = 'Gönderiliyor...';
+
+            const formData = new FormData(callBackForm);
+
+            try {
+                const response = await fetch(callBackForm.action, {
+                    method: callBackForm.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#4ade80';
+                    formStatus.innerText = 'Talebiniz alındı, en kısa sürede sizi arayacağız.';
+                    callBackForm.reset();
+                } else {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#f87171';
+                    formStatus.innerText = 'Bir sorun oluştu. Lütfen tekrar deneyin.';
+                }
+            } catch (error) {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#f87171';
+                formStatus.innerText = 'Bağlantı hatası oluştu.';
+            } finally {
+                formSubmitBtn.disabled = false;
+                formSubmitBtn.innerText = 'GÖNDER';
+            }
+        });
+    }
 </script>
 </body>
 </html>
