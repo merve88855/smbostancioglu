@@ -335,12 +335,12 @@
   <!-- Veri Motoru (Resimler klasöründeki yerel dosyalara bağlıdır) -->
   <script>
     const projectsData = {
-      mugla: {
-        title: "Muğla Villa ve Konut Projeleri",
-        desc: "<p>SM Bostancıoğlu olarak, Türkiye'nin en gözde lokasyonlarından biri olan Muğla'da hayata geçirdiğimiz villa ve konut projeleriyle, doğayla iç içe, konforlu ve estetik yaşam alanları sunuyoruz. Ege'nin eşsiz doğasına sahip Fethiye başta olmak üzere, Muğla'nın çeşitli bölgelerinde konumlanan projelerimiz; modern mimari anlayışı, yüksek inşaat kalitesi ve çevreye duyarlı tasarımıyla fark yaratıyor.</p><p>Gerek yazlık olarak kullanılabilecek özel villalar, gerekse dört mevsim yaşamaya uygun konut çözümleriyle farklı ihtiyaçlara hitap eden projelerimizde geniş yaşam alanları, ferah bahçeler ve fonksiyonel iç planlamalar ön planda tutulmuştur.</p>",
-        address: "",
-        images: ["resimler/mugla1.jpg", "resimler/mugla2.jpg", "resimler/mugla3.jpg", "resimler/mugla4.jpg"]
-      },
+     mugla: {
+      title: "Muğla Villa ve Konut Projeleri",
+      desc: "<p>SM Bostancıoğlu olarak, Türkiye'nin en gözde lokasyonlarından biri olan Muğla'da hayata geçirdiğimiz villa ve konut projeleriyle, doğayla iç içe, konforlu ve estetik yaşam alanları sunuyoruz. Ege'nin eşsiz doğasına sahip Fethiye başta olmak üzere, Muğla'nın çeşitli bölgelerinde konumlanan projelerimiz; modern mimari anlayışı, yüksek inşaat kalitesi ve çevreye duyarlı tasarımıyla fark yaratıyor.</p><p>Gerek yazlık olarak kullanılabilecek özel villalar, gerekse dört mevsim yaşamaya uygun konut çözümleriyle farklı ihtiyaçlara hitap eden projelerimizde geniş yaşam alanları, ferah bahçeler ve fonksiyonel iç planlamalar ön planda tutulmuştur.</p>",
+      address: "",
+      images: Array.from({ length: 57 }, (_, i) => `resimler/mugla${i + 1}.jpg`)
+    },
       bati: {
         title: "Batı Yerleşim Sitesi",
         desc: "<p>Batı Yerleşim Sitesi, Ankara'nın Yenimahalle ilçesine bağlı Turgut Özal Mahallesi'nde yer alan bir konut kompleksidir. Ankara'nın gözde yerleşim alanlarından Batıkent'te, modern şehircilik anlayışıyla inşa edilmiş prestijli bir konut projesidir.</p><p>Sosyal yaşam alanlarına, park ve yeşil alanlara, çocuk oyun alanlarına ve açık otoparka sahip olan site, aile yaşamı için konforlu ve güvenli bir ortam sunar. Sağlam yapısı ve estetik mimarisiyle Ankara'nın örnek konut projeleri arasında yer almaktadır.</p>",
