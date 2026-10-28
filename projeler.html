@@ -461,6 +461,11 @@
         closeImageModal();
       }
     });
+// Sayfa ilk yüklendiğinde Muğla projesini otomatik başlat
+document.addEventListener("DOMContentLoaded", () => {
+  loadProject('mugla');
+});   
+
   </script>
 
 </body>
