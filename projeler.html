@@ -301,13 +301,13 @@
         title: "Uyar İş Merkezi Projesi",
         desc: "<p>Uyar İş Merkezi, Ankara'nın Sincan ilçesindeki Pınarbaşı Mahallesi'nde, Vatan Caddesi üzerinde konumlanmış modern bir ticaret merkezidir. Bu iş merkezi, çeşitli sektörlerden firmalara ev sahipliği yaparak bölgenin ticari faaliyetlerine önemli katkılarda bulunmaktadır.</p><p>Geniş ofis alanları, modern altyapısı ve stratejik konumuyla işletmeler için ideal bir çalışma ortamı sağlamaktadır.</p>",
         address: "Uyar İş Merkezi – Vatan Caddesi Sincan / Ankara",
-        images: ["resimler/uyar1.jpg", "resimler/uyar2.jpg"]
+        images: []
       },
       butik: {
         title: "Butikkule Projesi",
         desc: "<p>Butik Kule Rezidans, Ankara'nın Etimesgut ilçesinin Topçu Mahallesi'nde konumlanmış modern bir konut projesidir. Proje, çağdaş mimarisi ve sunduğu olanaklarla bölgedeki yaşam standartlarını yükseltmeyi hedeflemektedir.</p><p>Daireler ferah iç mekânları ve kaliteli malzeme kullanımıyla konforlu bir yaşam alanı sağlamaktadır. Ayrıca güvenlik hizmetleri, otopark ve sosyal alanlar yer almaktadır.</p>",
         address: "Butikkule – Topçu mah. Etimesgut / Ankara",
-        images: ["resimler/butik1.jpg", "resimler/butik2.jpg"]
+        images: []
       },
       ankara_villa: {
         title: "Ankara Villa Projesi",
@@ -319,13 +319,13 @@
         title: "Uyarkent Sitesi Batıkent Projesi",
         desc: "<p>Uyarkent Sitesi, Ankara'nın Yenimahalle ilçesine bağlı Batıkent Mahallesi'nde konumlanmış prestijli bir konut kompleksidir. Osb Metro İstasyonu'na birkaç dakikalık yürüme mesafesinde bulunması, sakinlerine hızlı ve kolay ulaşım imkânı sunar.</p><p>Peyzajlı yeşil alanları, çocuk oyun parkları ve yürüyüş yollarıyla huzurlu ve güvenli bir yaşam alanı oluşturur.</p>",
         address: "Uyarkent Sitesi Batıkent mah. Yenimahalle / Ankara",
-        images: ["resimler/uyarkent_batikent1.jpg", "resimler/uyarkent_batikent2.jpg"]
+        images: []
       },
       uyarkent_torekent: {
         title: "Uyarkent Sitesi Törekent Projesi",
         desc: "<p>Sincan'ın gelişen aksında sağlam mühendislik çözümleri ve estetik mimariyle hayata geçirilmiş; aile odaklı modern bir konut kompleksi projesidir.</p>",
         address: "Törekent / Sincan / Ankara",
-        images: ["resimler/uyarkent_torekent1.jpg", "resimler/uyarkent_torekent2.jpg"]
+        images: []
       },
       izmir_villa: {
         title: "İzmir Villa ve Konut Projesi",
@@ -357,13 +357,23 @@
       }
 
       const galleryBox = document.getElementById('proj-gallery');
-      galleryBox.innerHTML = "";
-      data.images.forEach(imgUrl => {
+const galleryHeading = document.querySelector('.project-content h4');
+galleryBox.innerHTML = "";
+
+if (data.images && data.images.length > 0) {
+    if (galleryHeading) galleryHeading.style.display = 'block';
+    galleryBox.style.display = 'grid';
+    data.images.forEach(imgUrl => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
         item.innerHTML = `<img src="${imgUrl}" alt="${data.title}">`;
         galleryBox.appendChild(item);
-      });
+    });
+} else {
+    // Görsel yoksa alanı ve başlığını tamamen gizle
+    if (galleryHeading) galleryHeading.style.display = 'none';
+    galleryBox.style.display = 'none';
+}
 
       const items = document.querySelectorAll('.sidebar-item');
       items.forEach(el => el.classList.remove('active'));
