@@ -462,67 +462,30 @@
       }
     });
 // Sayfa ilk yüklendiğinde Muğla projesini otomatik başlat
-document.addEventListener("DOMContentLoaded", () => {
-  loadProject('mugla');
-});   
-// Sayfa ilk yüklendiğinde Muğla projesini otomatik başlat
     document.addEventListener("DOMContentLoaded", () => {
       loadProject('mugla');
     });
+    @media (max-width: 768px) {
+  #proj-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    align-items: start !important;
+  }
 
-    // İki parmakla kıstırma/açma ile galeri sütun sayısını değiştirme
-    (function enablePinchGallery() {
-      const gallery = document.getElementById('proj-gallery');
-      if (!gallery) return;
+  .gallery-item {
+    height: auto !important;
+    overflow: hidden;
+    border-radius: 8px;
+  }
 
-      let cols = 2;
-      let initialDistance = 0;
-      let isPinching = false;
-
-      function updateColumns(newCols) {
-        cols = Math.min(Math.max(newCols, 1), 8);
-        gallery.style.display = 'grid';
-        gallery.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-        gallery.style.gap = cols > 4 ? '3px' : '8px';
-      }
-
-      updateColumns(2);
-
-      gallery.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 2) {
-          isPinching = true;
-          initialDistance = Math.hypot(
-            e.touches[0].clientX - e.touches[1].clientX,
-            e.touches[0].clientY - e.touches[1].clientY
-          );
-        }
-      }, { passive: true });
-
-      gallery.addEventListener('touchmove', (e) => {
-        if (!isPinching || e.touches.length !== 2) return;
-
-        const currentDistance = Math.hypot(
-          e.touches[0].clientX - e.touches[1].clientX,
-          e.touches[0].clientY - e.touches[1].clientY
-        );
-
-        const diff = currentDistance - initialDistance;
-
-        if (diff < -50) {
-          updateColumns(cols + 1);
-          initialDistance = currentDistance;
-        } else if (diff > 50) {
-          updateColumns(cols - 1);
-          initialDistance = currentDistance;
-        }
-      }, { passive: true });
-
-      gallery.addEventListener('touchend', (e) => {
-        if (e.touches.length < 2) {
-          isPinching = false;
-        }
-      });
-    })();
+  .gallery-item img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+}
   </script>
 
 </body>
