@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smbostancioglu.com.tr/sitemap.xml
