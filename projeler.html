@@ -289,37 +289,69 @@
       </div>
     </div>
 
-    <!-- Sağ: Kurumsal Proje Menüsü -->
-    <div class="sidebar-box">
-      <div class="sidebar-header">
-        <span>SM Bostancıoğlu</span>
-        <h3 class="brand-font">PROJELER</h3>
-      </div>
-      <ul class="sidebar-menu">
-        <li class="sidebar-item active" onclick="loadProject('mugla')">
-          <span><i class="fa-solid fa-city icon-building"></i> MUĞLA VİLLA VE KONUT PROJELERİ</span>
-          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
-        </li>
-        <li class="sidebar-item" onclick="loadProject('bati')">
-          <span><i class="fa-solid fa-city icon-building"></i> BATI YERLEŞİM PROJESİ</span>
-          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
-        </li>
-         
-        <li class="sidebar-item" onclick="loadProject('ankara_villa')">
-          <span><i class="fa-solid fa-city icon-building"></i> ANKARA VİLLA PROJESİ</span>
-          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
-        </li>
-       
-        <li class="sidebar-item" onclick="loadProject('izmir_villa')">
-          <span><i class="fa-solid fa-city icon-building"></i> İZMİR VİLLA VE KONUT PROJESİ</span>
-          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
-        </li>
-        <li class="sidebar-item" onclick="loadProject('izmir_element')">
-          <span><i class="fa-solid fa-city icon-building"></i> İZMİR ELEMENT EGE ŞANTİYE</span>
-          <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
-        </li>
-      </ul>
-    </div>
+   <!-- Sağ: Kurumsal Proje Menüsü -->
+        <div class="sidebar-box">
+          <div class="sidebar-header">
+            <span>SM Bostancıoğlu</span>
+            <h3 class="brand-font">PROJELER</h3>
+          </div>
+          <ul class="sidebar-menu">
+            <!-- Ankara -->
+            <li class="sidebar-item active" onclick="loadProject('ankara')">
+              <span><i class="fa-solid fa-city icon-building"></i> ANKARA KONUT PROJELERİ</span>
+              <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+            </li>
+
+            <!-- İzmir -->
+            <li class="sidebar-item" onclick="loadProject('izmir')">
+              <span><i class="fa-solid fa-city icon-building"></i> İZMİR KONUT PROJELERİ</span>
+              <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+            </li>
+
+            <!-- Muğla Fethiye Başlığı (Açılır/Kapanır) -->
+            <li class="sidebar-item active" id="mugla-main-item" onclick="toggleMuglaMenu()" style="cursor: pointer; font-weight: 700; color: var(--gold); display: flex; justify-content: space-between; align-items: center;">
+              <span><i class="fa-solid fa-location-dot icon-building"></i> MUĞLA FETHİYE KONUT PROJELERİ</span>
+              <i class="fa-solid fa-chevron-down" id="mugla-arrow" style="font-size:0.75rem; transition: transform 0.3s ease;"></i>
+            </li>
+
+            <!-- Alt İlçeler (Kutusu) -->
+            <div id="mugla-sub-menu" style="display: block;">
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_kargi')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Kargı Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_ovacik')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Ovacık Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_tasyaka')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Taşyaka Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_kesikkapi')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Kesikkapı Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_patlangic')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Patlangıç Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_babatasi')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Babataşı Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_karaculha')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Karaçulha Konut Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+              </li>
+            </div>
+            <!-- İnşaat & Şantiye -->
+            <li class="sidebar-item" onclick="loadProject('insaat_santiye')">
+              <span><i class="fa-solid fa-helmet-safety icon-building"></i> İNŞAAT & ŞANTİYE</span>
+              <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i>
+            </li>
+          </ul>
+        </div>
 
   </div>
 
@@ -353,60 +385,99 @@
 
   <!-- Veri Motoru (Resimler klasöründeki yerel dosyalara bağlıdır) -->
   <script>
-    const projectsData = {
-     mugla: {
-      title: "Muğla Villa ve Konut Projeleri",
-      desc: "<p>SM Bostancıoğlu olarak, Türkiye'nin en gözde lokasyonlarından biri olan Muğla'da hayata geçirdiğimiz villa ve konut projeleriyle, doğayla iç içe, konforlu ve estetik yaşam alanları sunuyoruz. Ege'nin eşsiz doğasına sahip Fethiye başta olmak üzere, Muğla'nın çeşitli bölgelerinde konumlanan projelerimiz; modern mimari anlayışı, yüksek inşaat kalitesi ve çevreye duyarlı tasarımıyla fark yaratıyor.</p><p>Gerek yazlık olarak kullanılabilecek özel villalar, gerekse dört mevsim yaşamaya uygun konut çözümleriyle farklı ihtiyaçlara hitap eden projelerimizde geniş yaşam alanları, ferah bahçeler ve fonksiyonel iç planlamalar ön planda tutulmuştur.</p>",
-      address: "",
-     images: Array.from({ length: 82 }, (_, i) => `resimler/mugla${i + 1}.jpg`)
-    },
-      bati: {
-        title: "Batı Yerleşim Sitesi",
-        desc: "<p>Batı Yerleşim Sitesi, Ankara'nın Yenimahalle ilçesine bağlı Turgut Özal Mahallesi'nde yer alan bir konut kompleksidir. Ankara'nın gözde yerleşim alanlarından Batıkent'te, modern şehircilik anlayışıyla inşa edilmiş prestijli bir konut projesidir.</p><p>Sosyal yaşam alanlarına, park ve yeşil alanlara, çocuk oyun alanlarına ve açık otoparka sahip olan site, aile yaşamı için konforlu ve güvenli bir ortam sunar. Sağlam yapısı ve estetik mimarisiyle Ankara'nın örnek konut projeleri arasında yer almaktadır.</p>",
-        address: "Batı Yerleşim Sitesi Batıkent mah. Yenimahalle / Ankara",
-        images: ["resimler/bati1.jpg", "resimler/bati2.jpg"]
-      },
-      uyar: {
-        title: "Uyar İş Merkezi Projesi",
-        desc: "<p>Uyar İş Merkezi, Ankara'nın Sincan ilçesindeki Pınarbaşı Mahallesi'nde, Vatan Caddesi üzerinde konumlanmış modern bir ticaret merkezidir. Bu iş merkezi, çeşitli sektörlerden firmalara ev sahipliği yaparak bölgenin ticari faaliyetlerine önemli katkılarda bulunmaktadır.</p><p>Geniş ofis alanları, modern altyapısı ve stratejik konumuyla işletmeler için ideal bir çalışma ortamı sağlamaktadır.</p>",
-        address: "Uyar İş Merkezi – Vatan Caddesi Sincan / Ankara",
+  const projectsData = {
+     // MUĞLA FETHİYE GENEL GİRİŞ
+      mugla_genel: {
+        title: "Muğla Fethiye Konut Projeleri",
+        desc: "<p>SM Bostancıoğlu olarak, Ege ve Akdeniz'in kesişim noktası Fethiye'de doğayla iç içe, modern mimari ve yüksek mühendislik standartlarıyla villa ve konut projeleri üretiyoruz. Sağ taraftaki menüden incelemek istediğiniz bölgeyi (Kargı, Ovacık, Taşyaka vb.) seçerek projelerimizin detaylarına ve görsellerine ulaşabilirsiniz.</p>",
+        address: "Fethiye / Muğla",
         images: []
       },
-      butik: {
-        title: "Butikkule Projesi",
-        desc: "<p>Butik Kule Rezidans, Ankara'nın Etimesgut ilçesinin Topçu Mahallesi'nde konumlanmış modern bir konut projesidir. Proje, çağdaş mimarisi ve sunduğu olanaklarla bölgedeki yaşam standartlarını yükseltmeyi hedeflemektedir.</p><p>Daireler ferah iç mekânları ve kaliteli malzeme kullanımıyla konforlu bir yaşam alanı sağlamaktadır. Ayrıca güvenlik hizmetleri, otopark ve sosyal alanlar yer almaktadır.</p>",
-        address: "Butikkule – Topçu mah. Etimesgut / Ankara",
-        images: []
-      },
-      ankara_villa: {
-        title: "Ankara Villa Projesi",
-        desc: "<p>Ankara'daki villa projelerimiz, şehir yaşamının merkezinde ama kalabalıktan uzak, konforlu ve prestijli bir yaşam sunuyor.</p><p>Modern mimariyle tasarlanan bu özel yapılar, geniş bahçeleri, ferah iç alanları ve yüksek yapı kalitesiyle dikkat çekiyor. Doğayla iç içe sakin bir yaşam alanı arayanlar için ideal çözümler sunar.</p>",
+    // ANKARA
+      ankara: {
+        title: "Ankara Konut Projeleri",
+        desc: "<p>SM Bostancıoğlu güvencesiyle Başkent'te modern mimari anlayışıyla hayata geçirilen seçkin villa ve konut projelerimiz.</p>",
         address: "Çayyolu / Ankara",
-        images: ["resimler/ankara_villa1.jpg", "resimler/ankara_villa2.jpg"]
+        images: [
+          "resimler/ankara_villa1.jpg",
+          "resimler/ankara_villa2.jpg"
+        ]
       },
-      uyarkent_batikent: {
-        title: "Uyarkent Sitesi Batıkent Projesi",
-        desc: "<p>Uyarkent Sitesi, Ankara'nın Yenimahalle ilçesine bağlı Batıkent Mahallesi'nde konumlanmış prestijli bir konut kompleksidir. Osb Metro İstasyonu'na birkaç dakikalık yürüme mesafesinde bulunması, sakinlerine hızlı ve kolay ulaşım imkânı sunar.</p><p>Peyzajlı yeşil alanları, çocuk oyun parkları ve yürüyüş yollarıyla huzurlu ve güvenli bir yaşam alanı oluşturur.</p>",
-        address: "Uyarkent Sitesi Batıkent mah. Yenimahalle / Ankara",
-        images: []
-      },
-      uyarkent_torekent: {
-        title: "Uyarkent Sitesi Törekent Projesi",
-        desc: "<p>Sincan'ın gelişen aksında sağlam mühendislik çözümleri ve estetik mimariyle hayata geçirilmiş; aile odaklı modern bir konut kompleksi projesidir.</p>",
-        address: "Törekent / Sincan / Ankara",
-        images: []
-      },
-      izmir_villa: {
-        title: "İzmir Villa ve Konut Projesi",
-        desc: "<p>İzmir'in eşsiz doğasında yepyeni bir yaşam alanı. Denize yakın konumu, yemyeşil doğası ve modern mimarisiyle öne çıkan bu proje, sakin ve konforlu bir hayat arayanlara özel olarak tasarlandı.</p><p>Az katlı modern villalar, geniş terasları ve ferah iç mekanlarıyla kesintisiz doğa ve gün ışığı avantajına sahiptir.</p>",
+      // İZMİR (BİRLEŞTİRİLDİ)
+      izmir: {
+        title: "İzmir Konut Projeleri",
+        desc: "<p>Ege'nin parlayan yıldızı İzmir Yenifoça aksında modern mimari ve müstakil yaşam standartlarını buluşturan seçkin villa ve konut projelerimiz.</p>",
         address: "Yenifoça / İzmir",
-        images: ["resimler/izmir_villa1.jpg", "resimler/izmir_villa2.jpg"]
+        images: [
+          "resimler/izmir_villa1.jpg",
+          "resimler/izmir_villa2.jpg",
+          "resimler/izmir element1.jpg",
+          "resimler/izmir element2.jpg"
+        ]
       },
-      izmir_element: {
-        title: "İzmir Element Ege Şantiye",
-        desc: "<p>İzmir'in eşsiz deniz manzarasına hakim bu özel lokasyonda yükselen Element Ege Projesi. Zemin kotundan itibaren titizlikle planlanmış teraslı yapılarla deniz manzarasını her konuta ulaştırmayı hedefliyor.</p><p>Yamaç üzerine konumlanan villalar doğal eğimi avantaja çevirirken çevre ve zemin güçlendirme standartlarında öncüdür.</p>",
-        address: "Foça / İzmir",
-        images: ["resimler/izmir_element1.jpg", "resimler/izmir_element2.jpg"]
+
+      // FETHİYE - KARGI
+      fethiye_kargi: {
+        title: "Muğla Fethiye - Kargı Konut Projeleri",
+        desc: "<p>Fethiye Kargı bölgesinin huzurlu doğasında, denize yakın konumda tasarlanan lüks müstakil villalar ve modern konut alanları.</p>",
+        address: "Kargı / Fethiye / Muğla",
+        images: []
+      },
+
+      // FETHİYE - OVACIK
+      fethiye_ovacik: {
+        title: "Muğla Fethiye - Ovacık Konut Projeleri",
+        desc: "<p>Babadağ eteklerinde, temiz havası ve panoramik manzarasıyla öne çıkan Ovacık lüks tatil ve yaşam villaları.</p>",
+        address: "Ovacık / Fethiye / Muğla",
+        images: []
+      },
+
+      // FETHİYE - TAŞYAKA
+      fethiye_tasyaka: {
+        title: "Muğla Fethiye - Taşyaka Konut Projeleri",
+        desc: "<p>Fethiye Taşyaka mevkiinde şehir merkezine ve sosyal yaşam alanlarına dakikalar mesafesindeki konut yatırımlarımız.</p>",
+        address: "Taşyaka / Fethiye / Muğla",
+        images: []
+      },
+
+      // FETHİYE - KESİKKAPI
+      fethiye_kesikkapi: {
+        title: "Muğla Fethiye - Kesikkapı Konut Projeleri",
+        desc: "<p>Tarihi ve merkezi lokasyonuyla Fethiye Kesikkapı bölgesinde konforlu ve modern şehir mimarisi.</p>",
+        address: "Kesikkapı / Fethiye / Muğla",
+        images: []
+      },
+
+      // FETHİYE - PATLANGIÇ
+      fethiye_patlangic: {
+        title: "Muğla Fethiye - Patlangıç Konut Projeleri",
+        desc: "<p>Geniş bahçe payları, aile yaşamına uygun daire ve villa planlamalarıyla Patlangıç projelerimiz.</p>",
+        address: "Patlangıç / Fethiye / Muğla",
+        images: []
+      },
+
+      // FETHİYE - BABATAŞI
+      fethiye_babatasi: {
+        title: "Muğla Fethiye - Babataşı Konut Projeleri",
+        desc: "<p>Fethiye sahil bandına ve kordon boyuna komşu, Babataşı bölgesinin en prestijli konut alanları.</p>",
+        address: "Babataşı / Fethiye / Muğla",
+        images: []
+      },
+
+      // FETHİYE - KARAÇULHA
+      fethiye_karaculha: {
+        title: "Muğla Fethiye - Karaçulha Konut Projeleri",
+        desc: "<p>Yüksek yatırım potansiyeline sahip Karaçulha bölgesinde ferah yaşam alanları ve modern yapılar.</p>",
+        address: "Karaçulha / Fethiye / Muğla",
+        images: []
+      },
+
+      // İNŞAAT & ŞANTİYE
+      insaat_santiye: {
+        title: "İnşaat & Şantiye Projeleri",
+        desc: "<p>Temelden çatıya, kaba inşaattan ince işçiliğe kadar tüm projelerimizdeki mühendislik disiplini ve şantiye imalat süreçlerimiz.</p>",
+        address: "Fethiye / Ankara / İzmir Şantiyeleri",
+        images: []
       }
     };
 
@@ -482,9 +553,25 @@
     });
 // Sayfa ilk yüklendiğinde Muğla projesini otomatik başlat
     document.addEventListener("DOMContentLoaded", () => {
-      loadProject('mugla');
+     loadProject('mugla_genel');
     });
-   
+   // Muğla Menüsünü Açıp Kapatma ve Genel Tanıtımı Yükleme
+    function toggleMuglaMenu() {
+      const subMenu = document.getElementById('mugla-sub-menu');
+      const arrow = document.getElementById('mugla-arrow');
+      
+      // Genel Muğla sayfasını aç
+      loadProject('mugla_genel');
+
+      // Açıksa kapat, kapalıysa aç
+      if (subMenu.style.display === 'none') {
+        subMenu.style.display = 'block';
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+      } else {
+        subMenu.style.display = 'none';
+        if (arrow) arrow.style.transform = 'rotate(-90deg)';
+      }
+    }
   </script>
 
 </body>
