@@ -324,31 +324,10 @@
                 <span>• Ovacık Konut Projeleri</span>
                 <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
               </li>
-             <!-- Patlangıç Ana Buton (Tıklanınca altı açılır) -->
-              <li class="sidebar-item sub-item" onclick="togglePatlangicMenu()" style="padding-left: 2.2rem; font-size: 0.85rem; cursor: pointer;">
-                <span>• Patlangıç Konut Projeleri</span>
-                <i class="fa-solid fa-chevron-down" id="patlangic-arrow" style="font-size:0.7rem; transition: transform 0.3s ease;"></i>
+             <li class="sidebar-item sub-item" onclick="loadProject('fethiye_merkez')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+                <span>• Fethiye Merkez Projeleri</span>
+                <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
               </li>
-
-              <!-- Patlangıç Alt Projeleri -->
-              <div id="patlangic-sub-menu" style="display: block;">
-                <li class="sidebar-item sub-item" onclick="loadProject('fethiye_patlangic1')" style="padding-left: 3.2rem; font-size: 0.8rem;">
-                  <span>- Patlangıç 1</span>
-                  <i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i>
-                </li>
-                <li class="sidebar-item sub-item" onclick="loadProject('fethiye_patlangic2')" style="padding-left: 3.2rem; font-size: 0.8rem;">
-                  <span>- Patlangıç 2</span>
-                  <i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i>
-                </li>
-                <li class="sidebar-item sub-item" onclick="loadProject('fethiye_patlangic3')" style="padding-left: 3.2rem; font-size: 0.8rem;">
-                  <span>- Patlangıç 3</span>
-                  <i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i>
-                </li>
-                <li class="sidebar-item sub-item" onclick="loadProject('fethiye_patlangic4')" style="padding-left: 3.2rem; font-size: 0.8rem;">
-                  <span>- Patlangıç 4</span>
-                  <i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i>
-                </li>
-              </div>
             </div>
             <!-- İnşaat & Şantiye -->
             <li class="sidebar-item" onclick="loadProject('insaat_santiye')">
@@ -435,35 +414,11 @@
         images: []
       },
 
-     // FETHİYE - PATLANGIÇ 1
-      fethiye_patlangic1: {
-        title: "Muğla Fethiye - Patlangıç 1 Konut Projesi",
-        desc: "<p>Geniş bahçe payları ve modern mimarisiyle aile yaşamına uygun Patlangıç 1 projemiz.</p>",
-        address: "Patlangıç / Fethiye / Muğla",
-        images: []
-      },
-
-      // FETHİYE - PATLANGIÇ 2
-      fethiye_patlangic2: {
-        title: "Muğla Fethiye - Patlangıç 2 Konut Projesi",
-        desc: "<p>Fethiye Patlangıç mevkiinde konforlu iç mekanlar ve seçkin standartlarla hayata geçirilen Patlangıç 2 etabımız.</p>",
-        address: "Patlangıç / Fethiye / Muğla",
-        images: []
-      },
-
-      // FETHİYE - PATLANGIÇ 3
-      fethiye_patlangic3: {
-        title: "Muğla Fethiye - Patlangıç 3 Konut Projesi",
-        desc: "<p>Doğa ile iç içe, ferah teras ve balkon alanlarıyla tasarlanan Patlangıç 3 projemiz.</p>",
-        address: "Patlangıç / Fethiye / Muğla",
-        images: []
-      },
-
-      // FETHİYE - PATLANGIÇ 4
-      fethiye_patlangic4: {
-        title: "Muğla Fethiye - Patlangıç 4 Konut Projesi",
-        desc: "<p>Modern mühendislik ve estetiği buluşturan Patlangıç 4 projemiz.</p>",
-        address: "Patlangıç / Fethiye / Muğla",
+     // FETHİYE - MERKEZ
+      fethiye_merkez: {
+        title: "Muğla Fethiye - Merkez Projeleri",
+        desc: "<p>Fethiye şehir merkezinde, marinaya, kordona ve tüm sosyal yaşam alanlarına yürüme mesafesinde prestijli projelerimiz.</p>",
+        address: "Merkez / Fethiye / Muğla",
         images: []
       },
 
@@ -586,9 +541,9 @@
         closeImageModal();
       }
     });
-// Sayfa ilk yüklendiğinde Muğla projesini otomatik başlat
+// Sayfa ilk yüklendiğinde ankara projesini otomatik başlat
     document.addEventListener("DOMContentLoaded", () => {
-     loadProject('mugla_genel');
+     loadProject('ankara');
     });
    // Muğla Menüsünü Açıp Kapatma ve Genel Tanıtımı Yükleme
     function toggleMuglaMenu() {
@@ -607,17 +562,7 @@
         if (arrow) arrow.style.transform = 'rotate(-90deg)';
       }
     } 
-    function togglePatlangicMenu() {
-      const subMenu = document.getElementById('patlangic-sub-menu');
-      const arrow = document.getElementById('patlangic-arrow');
-      if (subMenu.style.display === "none" || subMenu.style.display === "") {
-        subMenu.style.display = "block";
-        arrow.style.transform = "rotate(0deg)";
-      } else {
-        subMenu.style.display = "none";
-        arrow.style.transform = "rotate(-90deg)";
-      }
-    }
+    
   </script>
 
 </body>
