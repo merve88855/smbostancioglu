@@ -314,8 +314,8 @@
               <i class="fa-solid fa-chevron-right" id="mugla-arrow" style="font-size:0.75rem; transition: transform 0.3s ease;"></i>
             </li>
 
-            <!-- Alt İlçeler (Kutusu) -->
-            <div id="mugla-sub-menu" style="display: none;"></div>
+           <!-- Alt İlçeler Kutusu -->
+            <div id="mugla-sub-menu" style="display: none;">
               <li class="sidebar-item sub-item" onclick="loadProject('fethiye_kargi')" style="padding-left: 2.2rem; font-size: 0.85rem;">
                 <span>• Kargı Konut Projeleri</span>
                 <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
@@ -324,7 +324,7 @@
                 <span>• Ovacık Konut Projeleri</span>
                 <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
               </li>
-             <li class="sidebar-item sub-item" onclick="loadProject('fethiye_merkez')" style="padding-left: 2.2rem; font-size: 0.85rem;">
+              <li class="sidebar-item sub-item" onclick="loadProject('fethiye_merkez')" style="padding-left: 2.2rem; font-size: 0.85rem;">
                 <span>• Fethiye Merkez Projeleri</span>
                 <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
               </li>
@@ -541,28 +541,24 @@
         closeImageModal();
       }
     });
-// Sayfa ilk yüklendiğinde ankara projesini otomatik başlat
+// Sayfa ilk yüklendiğinde Ankara projesini otomatik başlat
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('mugla-sub-menu').style.display = 'none';
-     loadProject('ankara');
+      loadProject('ankara');
     });
-   // Muğla Menüsünü Açıp Kapatma ve Genel Tanıtımı Yükleme
+
+    // Muğla Menüsünü Açıp Kapatma
     function toggleMuglaMenu() {
       const subMenu = document.getElementById('mugla-sub-menu');
       const arrow = document.getElementById('mugla-arrow');
-      
-      // Genel Muğla sayfasını aç
-      loadProject('mugla_genel');
 
-      // Açıksa kapat, kapalıysa aç
-      if (subMenu.style.display === 'none') {
+      if (subMenu.style.display === 'none' || subMenu.style.display === '') {
         subMenu.style.display = 'block';
-        if (arrow) arrow.style.transform = 'rotate(0deg)';
+        if (arrow) arrow.style.transform = 'rotate(90deg)';
       } else {
         subMenu.style.display = 'none';
-        if (arrow) arrow.style.transform = 'rotate(-90deg)';
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
       }
-    } 
+    }
     
   </script>
 
